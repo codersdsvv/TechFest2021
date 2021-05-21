@@ -8,8 +8,10 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
 	<!-- <link rel="stylesheet" href="static/css/style.css"> -->
 	<link rel="stylesheet" href="static/css/tailwind.min.css">
-  <link rel="stylesheet" href="static/css/loginsignup.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="static/css/loginsignup.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8">
+
+	</script>
 </head>
 
 <body>
@@ -52,11 +54,12 @@
      
          <h3 >Welcome </h3>
         <input class="user-input" type="text" name="" placeholder="Your Full Name" required><br>
-        <input class="user-input" type="text" required pattern="[0-9]{7}"   name=""  placeholder="Roll NO" required><br>
+        <input class="user-input" type="text" required pattern="[0-9]{7}"   name="" id="roll"  placeholder="Roll NO"><br>
         <input class="user-input" type="email" name="" placeholder="Email Address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
-        <input class="user-input" type="text" name="" placeholder="Mobile Number" required pattern="[0-9]{10}" required><br>
-        <input class="user-input" minlength="6" type="password" name="" placeholder="Password" required><br>
-        <input class="user-input" minlength="6"type="password" name="" placeholder=" Confirm Password" required><br>
+        <input class="user-input" type="text" name="" placeholder="Mobile Number" required pattern="[0-9]{10}"><br>
+        <input class="user-input" minlength="6" type="password" name="" placeholder="Password" id="password" required><br>
+        <input class="user-input" minlength="6" type="password" name="" placeholder=" Confirm Password" id="confirm_password" required><br>
+        <span id='messagep'></span> <br>
         <input class="btn" type="submit" name="" value="SIGN UP">
         <div class="options-02">
           <p>Already Registered? <a href="#">Sign In</a></p>
@@ -65,7 +68,16 @@
       <!--signup form end-->
     </div>
     <!--form area end-->
-
+  
+    </script>
+    <script type="text/javascript">
+      $('#password, #confirm_password').on('keyup', function () {
+      if ($('#password').val() == $('#confirm_password').val()) {
+        $('#message').html('').css('color', 'green');
+      } else 
+        $('#messagep').html('Not Matching').css('color', 'red');
+      });
+    </script>
     <script type="text/javascript">
     $('.options-02 a').click(function(){
       $('form').animate({
