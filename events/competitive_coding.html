@@ -1,0 +1,67 @@
+<!Doctype html>
+<html>
+
+<head>
+	<title>Tech Fest</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="/static/css/tailwind.min.css">
+	<link rel="stylesheet" href="/static/css/events.css">
+
+</head>
+
+<body>
+	<header class="text-gray-600 body-font bg-gray-800" id="navbar">
+		<div class="mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+			<a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+
+				<span class="ml-3 text-xl text-white">Tech Fest</span>
+    </a>
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+      <a class="mr-5 hover:text-green-500 text-white" href="/index.html">Home</a>
+      <a class="mr-5 hover:text-green-500 text-white" href="/index.html#events">Events</a>
+      <a class="mr-5 hover:text-green-500 text-white">Our Team</a>
+      <a class="mr-5 hover:text-green-500 text-white">Contact Us</a>
+    </nav>
+    <a href="/login.html"><button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 hover:text-green-500">Login/Signup
+    </button></a>
+    </div>
+    </header>
+    <section class="text-white body-font bg-gray-700" id="event_detail">
+    <div class="container px-5 py-24 mx-auto flex flex-wrap flex-col">
+    <div class="flex flex-col text-center w-full">
+      <h1 class="sm:text-3xl text-4xl font-semibold title-font mb-4 text-white">Competitive Coding</h1>
+    <!-- <div class="flex flex-wrap -m-4"> -->
+    <div class="tabset bg-gray-800">
+  <!-- Tab 1 -->
+  <input type="radio" name="tabset" id="tab1" aria-controls="description" checked>
+  <label for="tab1">Description</label>
+  <!-- Tab 2 -->
+  <input type="radio" name="tabset" id="tab2" aria-controls="rules">
+  <label for="tab2">Rules</label>
+  <!-- Tab 3 -->
+  <input type="radio" name="tabset" id="tab3" aria-controls="registration">
+  <label for="tab3">Registration</label>
+  
+  <div class="tab-panels bg-gray-700 text-left">
+    <section id="description" class="tab-panel">
+      <h2>Description</h2>
+      <p>Description goes here </p>
+  </section>
+    <section id="rules" class="tab-panel">
+      <h2>Rules</h2>
+      <p>Rules goes here.</p>
+    </section>
+    <section id="registration" class="tab-panel">
+      <h2>Registration</h2>
+      <p>Registration Form here.</p>
+    </section>
+  </div>
+<!-- </div> -->
+</div>
+  </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!Doctype html>
+<html>
+
+<head>
+	<title>Log In | Tech Fest</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
+	<!-- <link rel="stylesheet" href="static/css/style.css"> -->
+	<link rel="stylesheet" href="static/css/tailwind.min.css">
+  <link rel="stylesheet" href="static/css/loginsignup.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+	<header class="text-gray-600 body-font bg-gray-900" id="navbar">
+		<div class="mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+			<a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+				<span class="ml-3 text-xl text-white">Tech Fest</span>
+    </a>
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+      <a class="mr-5 hover:text-green-500 text-white" href="index.html">Home</a>
+      <a class="mr-5 hover:text-green-500 text-white" href="index.html#events">Events</a>
+      <a class="mr-5 hover:text-green-500 text-white">Our Team</a>
+      <a class="mr-5 hover:text-green-500 text-white">Contact Us</a>
+    </nav>
+    <a href="loginsignup.html"><button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 hover:text-green-500">Login/Signup
+    </button></a>
+    </div>
+  </header>
+<section id="login_page" class="bg-gray-800">
+  <div class="container px-5 py-24 mx-auto flex flex-wrap flex-col">
+  <!--form area start-->
+    <div class="form">
+      <!--login form start-->
+      <form class="login-form" action="" method="post">
+        <h3>Welcome Back</h3> 
+        <input class="user-input" type="text" name="" placeholder="Username" required><br>
+        <input class="user-input" type="password" name="" placeholder="Password" required><br>
+        <!-- <div class="options-01">
+          <label class="remember-me"><input type="checkbox" name="">Remember me</label>
+          <a href="#">Forgot your password?</a>
+        </div> -->
+        <input class="btn" type="submit" name="" value="LOGIN">
+        <div class="options-02">
+          <p>Not Registered? <a href="#">Create an Account</a></p>
+        </div>
+      </form>
+      <!--login form end-->
+      <!--signup form start-->
+      <form class="signup-form" action="" method="post">
+     
+         <h3 >Welcome </h3>
+        <input class="user-input" type="text" name="" placeholder="Your Full Name" required><br>
+        <input class="user-input" type="text" required pattern="[0-9]{7}"   name=""  placeholder="Roll NO" required><br>
+        <input class="user-input" type="email" name="" placeholder="Email Address" required><br>
+        <input class="user-input" type="text" name="" placeholder="Mobile Number" required pattern="[0-9]{10}" required><br>
+        <input class="user-input" minlength="6" type="password" name="" placeholder="Password" required><br>
+        <input class="user-input" minlength="6"type="password" name="" placeholder=" Confirm Password" required><br>
+        <input class="btn" type="submit" name="" value="SIGN UP">
+        <div class="options-02">
+          <p>Already Registered? <a href="#">Sign In</a></p>
+        </div>
+      </form>
+      <!--signup form end-->
+    </div>
+    <!--form area end-->
+
+    <script type="text/javascript">
+    $('.options-02 a').click(function(){
+      $('form').animate({
+        height: "toggle", opacity: "toggle"
+      }, "ease-in-out");
+    });
+    </script>
+  </div>
+</section>
+</body>
+</html>
