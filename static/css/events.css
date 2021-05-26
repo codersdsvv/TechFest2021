@@ -49,28 +49,32 @@
   bottom: 10px;
   width: 22px;
   height: 4px;
-  background: #cff0c5;
+  background: #1167d8;
 }
 
 .tabset > label:hover,
 .tabset > input:focus + label {
-  color: rgb(195, 245, 153);
+  color: rgb(81, 114, 224);
 }
 
 .tabset > label:hover::after,
 .tabset > input:focus + label::after,
 .tabset > input:checked + label::after {
-  background: rgb(167, 211, 141);
+  background: rgb(8, 99, 235);
 }
 
 .tabset > input:checked + label {
-  border-color: #ccc;
+  border-color: rgb(15, 78, 212);
   border-bottom: 1px solid #fff;
   margin-bottom: -1px;
+  background-color: rgb(58, 57, 57)
 }
 
 .tab-panel {
-  padding: 30px;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 30px;
+  padding-bottom: 30px;
   /* border-top: 1px solid #ccc; */
 }
 
