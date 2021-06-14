@@ -23,8 +23,8 @@
     <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
       <a class="mr-5 hover:text-green-500 text-white" href="index.html">Home</a>
       <a class="mr-5 hover:text-green-500 text-white" href="index.html#events">Events</a>
-      <a class="mr-5 hover:text-green-500 text-white">Our Team</a>
-      <a class="mr-5 hover:text-green-500 text-white">Contact Us</a>
+      <a class="mr-5 hover:text-green-500 text-white" href="our-team.html">Our Team</a>
+      <a class="mr-5 hover:text-green-500 text-white" href="contact.html">Contact Us</a>
     </nav>
     <a href="#"><button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 hover:text-blue-500">Login/Signup
     </button></a>
@@ -35,31 +35,33 @@
   <!--form area start-->
     <div class="form">
       <!--login form start-->
-      <form class="login-form" action="" method="post">
-        <h3>Welcome Back</h3> 
-        <input class="user-input" type="text" name="" placeholder="Username" required><br>
-        <input class="user-input" type="password" name="" placeholder="Password" required><br>
-        <!-- <div class="options-01">
-          <label class="remember-me"><input type="checkbox" name="">Remember me</label>
+    <form  action="" name=loginform onsubmit="return (loginvalidate());" method="post">
+        <h3 >Welcome Back</h3> 
+        <input id="f1name" class="user-input" type="text" name="Name" placeholder="Username" ></br>
+        <input id="f1password" class="user-input"  maxlength="7" type="password" name="Password" placeholder="Password" ></br>
+        <span ><p class="error">   </p> </span>
+        <div class="options-01">
+          <label  id="f3" class="remember-me"><input type="checkbox" name="">Remember me</label>
           <a href="#">Forgot your password?</a>
-        </div> -->
+        </div>
         <input class="btn" type="submit" name="" value="LOGIN">
+
         <div class="options-02">
           <p>Not Registered? <a href="#">Create an Account</a></p>
         </div>
       </form>
       <!--login form end-->
       <!--signup form start-->
-      <form class="signup-form" action="" method="post">
+      <form class="signup-form"  action=""  onsubmit="return (signupvalidate());"  method="post" >
      
          <h3 >Welcome </h3>
-        <input class="user-input" type="text" name="" placeholder="Your Full Name" required><br>
-        <input class="user-input" type="text" required pattern="[0-9]{7}"   name="" id="roll"  placeholder="Roll NO"><br>
-        <input class="user-input" type="email" name="" placeholder="Email Address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
-        <input class="user-input" type="text" name="" placeholder="Mobile Number" required pattern="[0-9]{10}"><br>
-        <input class="user-input" minlength="6" type="password" name="" placeholder="Password" id="password" required><br>
-        <input class="user-input" minlength="6" type="password" name="" placeholder=" Confirm Password" id="confirm_password" required><br>
-        <span id='messagep'></span> <br>
+        <input class="user-input"id="f2name" type="text" name="li" placeholder="Username" ></br>
+        <input class="user-input"  id="f2rollnumber" maxlength="10"   type="tel"   name="rollno"  placeholder="Roll NO(Max 7 Digits)" ></br>
+        <input class="user-input"  id="f2email" type="text" name="" placeholder="Email Address" ></br>
+        <input class="user-input" id= "f2phone"maxlength="10" type="" name="" placeholder="Mobile Number" ></br>
+        <input class="user-input" id="f2password"maxlength="7" type="password" name="" placeholder="Password" ></br>
+        <input class="user-input" id="f2confirmpassword" maxlength="7"type="password" name="" placeholder=" Confirm Password" ></br>
+        <span><p class= "singnuperror"></p></span>
         <input class="btn" type="submit" name="" value="SIGN UP">
         <div class="options-02">
           <p>Already Registered? <a href="#">Sign In</a></p>
@@ -68,22 +70,85 @@
       <!--signup form end-->
     </div>
     <!--form area end-->
-  
-    </script>
-    <script type="text/javascript">
-      $('#password, #confirm_password').on('keyup', function () {
-      if ($('#password').val() == $('#confirm_password').val()) {
-        $('#message').html('').css('color', 'green');
-      } else 
-        $('#messagep').html('Passwords are not Matching').css('color', 'red');
-      });
-    </script>
+
     <script type="text/javascript">
     $('.options-02 a').click(function(){
       $('form').animate({
         height: "toggle", opacity: "toggle"
-      }, "ease-in-out");
+      }, "fast");
     });
+
+    function  loginvalidate(){
+      var name=document.getElementById("f1name").value;
+      var password=document.getElementById("f1password").value;
+  
+ if(name =="" || password ==""){
+
+  var error=document.getElementsByClassName("error");
+
+       error[0].innerHTML= "Please fill the all the input";
+       error[0].style.color="red";
+      return false;
+     }
+     return true;
+  }
+  function  signupvalidate(){
+      var name=document.getElementById("f2name").value;
+      var rollno=document.getElementById("f2rollnumber").value;
+      var email=document.getElementById("f2email").value;
+     var phonenumber= document.getElementById("f2phone").value;
+     var passwordsignup= document.getElementById("f2password").value;
+     var confirmpassword= document.getElementById("f2confirmpassword").value;
+
+ 
+ if(name =="" || passwordsignup =="" || rollno==""||email==""||confirmpassword==""|| phonenumber==""){
+
+  var errors=document.getElementsByClassName("singnuperror");
+
+       errors[0].innerHTML= "Please fill the all the input";
+       errors[0].style.color="red";
+      return false;
+
+     }
+if(rollno.length==7-1|| isNaN(rollno)){
+      var errors=document.getElementsByClassName("singnuperror");
+
+errors[0].innerHTML= "Rollno are not valid";
+errors[0].style.color="red";
+return false;
+     }
+     var atpostion=email.indexof("@");
+     var dotposition=email.indexof(".");
+     if(atpostion<1||dotposition<atpostion+2||dotposition+2>=email.length){
+      var errors=document.getElementsByClassName("singnuperror");
+
+errors[0].innerHTML= "please enter valid email address";
+errors[0].style.color="red";
+return false;
+     }
+     if(phonenumber.length==10||isNaN(phonenumber)){
+      var errors=document.getElementsByClassName("singnuperror");
+      errors[0].innerHTML= "PhoneNUMber not valid";
+errors[0].style.color="red";
+return false;
+
+     }
+    
+if(passwordsignup!=confirmpassword){
+      var errors=document.getElementsByClassName("singnuperror");
+      errors[0].innerHTML= "password is not equals to confirm password";
+ errors[0].style.color="red";
+return false;
+
+    }
+     
+
+     
+     return true;
+  }
+
+  
+
     </script>
   </div>
 </section>
